@@ -1,55 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Practice</title>
+    <title>한국어 입력 양식</title>
 </head>
 <body>
-    <h1>Form Practice</h1>
+    <h1>개인 정보 입력</h1>
 
     <form action="submit.php" method="post">
-        <!-- 필수 입력 항목 -->
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required><br><br>
+        <label for="name">이름:</label>
+        <input type="text" id="name" name="name" required><br><br>
 
-        <label for="gender">Gender:</label>
-        <input type="radio" id="male" name="gender" value="male"> Male
-        <input type="radio" id="female" name="gender" value="female"> Female
-        <input type="radio" id="other" name="gender" value="other"> Other<br><br>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required><br><br>
 
-        <label for="subscription">Subscribe to newsletter:</label>
-        <input type="checkbox" id="subscription" name="subscription" value="yes"> Yes<br><br>
+        <label for="phone">핸드폰 번호:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" placeholder="010-1234-5678" required><br><br>
 
-        <label for="country">Country:</label>
-        <select id="country" name="country">
-            <option value="usa">United States</option>
-            <option value="canada">Canada</option>
-            <option value="uk">United Kingdom</option>
+        <label>성별:</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">남성</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">여성</label><br><br>
+
+        <label for="birthdate">생년월일:</label>
+        <input type="date" id="birthdate" name="birthdate" required><br><br>
+
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="address">주소:</label>
+        <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+
+        <label>취미:</label>
+        <input type="checkbox" id="hobby1" name="hobby[]" value="reading">
+        <label for="hobby1">독서</label>
+        <input type="checkbox" id="hobby2" name="hobby[]" value="cooking">
+        <label for="hobby2">요리</label>
+        <input type="checkbox" id="hobby3" name="hobby[]" value="sports">
+        <label for="hobby3">스포츠</label><br><br>
+
+        <label for="color">좋아하는 색상:</label>
+        <input type="color" id="color" name="color"><br><br>
+
+        <label for="car">좋아하는 자동차 브랜드:</label>
+        <select id="car" name="car">
+            <option value="audi">Audi</option>
+            <option value="bmw">BMW</option>
+            <option value="mercedes">Mercedes-Benz</option>
+            <option value="volvo">Volvo</option>
         </select><br><br>
 
-        <label for="birthDate">Date of Birth:</label>
-        <input type="date" id="birthDate" name="birthDate"><br><br>
-
-        <label for="comments">Comments:</label><br>
-        <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
-
-        <!-- 선택적 입력 항목 -->
-        <fieldset>
-            <legend>Additional Information</legend>
-            <label for="favoriteColor">Favorite Color:</label>
-            <input type="color" id="favoriteColor" name="favoriteColor"><br><br>
-
-            <label for="customField">Custom Field:</label>
-            <input list="datalistOptions" id="customField" name="customField">
-            <datalist id="datalistOptions">
-                <option value="Option 1">
-                <option value="Option 2">
-                <option value="Option 3">
-            </datalist><br><br>
-        </fieldset>
-
-        <input type="submit" value="Submit">
+        <input type="submit" value="제출">
     </form>
 </body>
 </html>
